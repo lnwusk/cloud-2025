@@ -26,7 +26,7 @@ public class GreetingController {
     
     
     @GetMapping
-    @Limit(key = "limit1", permitsPerSecond = 1, timeout = 500, timeunit = TimeUnit.MILLISECONDS,msg = "当前排队人数较多，请稍后再试！")
+    @Limit(key = "limit1", permitsPerSecond = 100, timeout = 500, timeunit = TimeUnit.MILLISECONDS,msg = "当前排队人数较多，请稍后再试！")
     public ResultVO<String> getGreeting(@RequestParam("message") String message) {
         System.out.println(1);
         if (!rateLimiter.tryAcquire()) {
