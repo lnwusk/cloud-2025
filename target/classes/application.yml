@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: FinalProject
+  main:
+    web-application-type: reactive
+  data:
+    redis:
+      host: localhost
+      port: 6379
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: greeting_route
+#          uri: http://localhost:8000
+#          predicates:
+#            - Path=/api/greeting
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 1
+#                redis-rate-limiter.burstCapacity: 1
+#                key-resolver: "#{@userKeyResolver}"
+        
+
+
+
+server:
+  port: 8000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "prometheus"

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: final-project
-          image: final-project:2024
+          image: final-project:2025
           ports:
             - containerPort: 8000
           resources:
